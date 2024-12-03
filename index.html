@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+      <div class="header">
+        <h1 class="title-text">Loan Payoff Calculator</h1>
+      </div>
+
+      
+      <div class="flex-container" id="page-content">
+        <div class="flex-container" id="loan-input-all">
+          <div id="amount-input">
+           <form id="loan-form">
+            <label for="loan-amount">Loan Amount</label>
+            <input id="loan-amount" placeholder="Enter loan amount" aria-label="Loan Amount" required>
+    
+            <label for="monthly-payment">Monthly Payment</label>
+            <input id="monthly-payment" placeholder="Enter monthly payment" aria-label="Monthly payment" required>
+    
+            <label for="interest-rate">Interest Rate</label>
+            <input id="interest-rate" placeholder="Enter interest rate" aria-label="Interest rate" required>
+    
+            <button type="button" onclick="calculatePayoff()">CALCULATE</button>
+           </form>
+          </div>
+    
+         <div class="results">
+          <p id="result-text">Results: </p>
+         </div>
+        </div>
+
+        <div class="flex-container" id="loan-info">
+         <h2>Read more about your loan:</h2>
+          <select id="loan-selection">
+            <option value="housing">Housing Loans</option>
+            <option value="apartment">Apartment Loans</option>
+            <option value="business">Business Loans</option>
+            <option value="personal">Personal Loans</option>
+            <option value="car">Car Loans</option>
+            <option value="boat">Boat Loans</option>
+          </select>
+
+           <ul id="loanTypes"></ul>
+        </div>
+      </div>
+    
+
+
+
+ <script src="scripts-loans.js"></script>   
+</body>
+</html>
