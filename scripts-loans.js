@@ -77,7 +77,7 @@ function addCommas(value) {
     const extraMonths = months % 12;
   
     
-    let resultText = `It will take you ${years} years`;
+    let resultText = `It will take you ${years} year(s)`;
     if (extraMonths > 0) {
         resultText += ` and ${extraMonths} months`;
     }

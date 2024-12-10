@@ -59,8 +59,9 @@ button:active {
 
 #page-content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding-top: 120px;
   padding-bottom: 20px;
 }
@@ -97,13 +98,14 @@ button:active {
 }
 
 #loan-info {
-  background-color: rgb(164, 171, 185);
+  background-color: rgb(145, 166, 145);
   width: 900px;
   list-style: none;
   padding-left: 30px;
   padding-right: 30px;
   padding-bottom: 10px;
   margin-left: 20px;
+  border-radius: 15px;
 }
 
 .loan-item {
