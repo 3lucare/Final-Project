@@ -26,30 +26,6 @@ label, select, input {
   box-shadow: inset 3px 2px rgb(216, 216, 216);
 }
 
-button {
-  display: block;
-  margin: 10px auto;
-  width: 100px;
-  height: 50px;
-  border-radius: 7px;
-  border-style: none;
-  background-color: rgb(145, 166, 145);
-  color: rgb(56, 56, 56);
-  font-weight: bold;
-}
-
-button:hover {
-  background-color: rgb(117, 135, 117); 
-  color: #f1f1f1;
-  transform: scale(1.05);
-}
-
-
-button:active {
-  background-color: rgb(64, 74, 64);
-  transform: scale(0.95);
-}
-
 .title-text {
   display: table-cell;
   vertical-align: middle;
@@ -80,12 +56,11 @@ button:active {
   border-radius: 15px;
 }
 
-
 .results {
   width: 80%;
   height: 250px;
   word-wrap: break-word;
-  background-color: rgb(145, 166, 145);
+  background-color: rgb(186, 211, 186);
   border-radius: 10px;
   color: rgb(0, 0, 0);
   padding: 10px;
@@ -97,25 +72,53 @@ button:active {
   margin: 15px;
 }
 
-#loan-info {
+button {
+  display: block;
+  margin: 10px auto;
+  width: 100px;
+  height: 50px;
+  border-radius: 7px;
+  border-style: none;
   background-color: rgb(145, 166, 145);
-  width: 900px;
+  color: rgb(255, 252, 252);
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: rgb(117, 135, 117); 
+  color: #f1f1f1;
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: rgb(64, 74, 64);
+  transform: scale(0.95);
+}
+
+#loan-info {
+  background-color: rgb(186, 211, 186);
+  width: 100%;
+  max-width: 900px;
   list-style: none;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 10px;
-  margin-left: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
   border-radius: 15px;
+  margin: 0px;
+  box-sizing: border-box;
 }
 
 .loan-item {
   list-style: none;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   margin-bottom: 20px;
 }
 
-.img-container {
+/* .img-container {
   max-width: 300px;
   max-height: 200px;
   display: block;
@@ -128,12 +131,30 @@ button:active {
   max-width: 100%;
   height: 100%;
   object-fit: cover;
+} */
+
+
+.img-container {
+  max-width: 250px;
+  flex: 1; 
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  overflow: hidden;
+}
+
+.img-item {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .text-container {
-  flex: 1;
+  flex: 2;
   padding-left: 15px;
   padding-right: 15px;
+  box-sizing: border-box; 
+  text-align: left;
 }
  
 
@@ -143,6 +164,7 @@ button:active {
   #page-content {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
     margin: 0 auto;
   }
@@ -166,14 +188,6 @@ button:active {
     justify-content: center;
   }
 
-  #loan-info {
-    text-align: center;
-    width: 95%; 
-    max-width: 600px;
-    box-sizing: border-box;
-    margin-right: 5%;
-  }
-
   input, select {
     width: 90%;
     max-width: 300px;
@@ -191,35 +205,25 @@ button:active {
     justify-content: center;
   }
 
-  .img-container {
-    width: 95%;
-    max-width: 300px;
-    margin: 0 auto 10px;
-    padding-right: 8%;
+  button:hover {
+    background-color: rgb(117, 135, 117); 
+    color: #f1f1f1;
+    transform: scale(1.05);
+  }
+  
+  button:active {
+    background-color: rgb(64, 74, 64);
+    transform: scale(0.95);
   }
 
-  .img-item {
-    object-fit: cover;
-    width: 95%;
-    height: auto;
-  }
-
-  .loan-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 0 auto;
-  }
-
-  .results, .loan-description {
+  .results {
     text-align: center;
     width: 95%;
     margin: 10px auto;
     word-wrap: break-word;
     max-width: 350px;
     padding: 15px;
-    background-color: rgb(145, 166, 145);
+    background-color: rgb(186, 211, 186);
     border-radius: 10px;
   }
 
@@ -228,4 +232,48 @@ button:active {
     margin: 15px;
     text-align: center;
   }
+
+  .loan-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  #loan-info {
+    text-align: center;
+    width: 100%; 
+    max-width: 600px;
+    margin-right: 0 auto;
+  }
+
+  .loan-description {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img-container {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    padding: 0px;
+ }
+
+  .img-item {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+
+  .text-container {
+    width: 100%; 
+    text-align: center; 
+  }
+
 }
