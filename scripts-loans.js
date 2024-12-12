@@ -1,8 +1,3 @@
-console.log("Did it work?")
-
-
-
-
 const loanTypesList = [
   ["Housing Loans", "https://images.pexels.com/photos/27425247/pexels-photo-27425247/free-photo-of-a-cobblestone-street-with-white-houses-and-red-roofs.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "house", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."],
   ["Apartment Loans", "https://images.pexels.com/photos/5523124/pexels-photo-5523124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", "apartment", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."],
@@ -14,17 +9,17 @@ const loanTypesList = [
 
 const loanList = document.getElementById("loanTypes");
 
-function addCommas(value) {
-    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
+const addCommas = (value) => 
+    value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
   
   // Function to remove commas from a string
-  function removeCommas(value) {
-    return value.replace(/,/g, "");
-  }
+  const removeCommas = (value) =>
+    value.replace(/,/g, "");
+  
   
   // Attach event listeners for formatting inputs
-  document.getElementById("loan-amount").addEventListener("input", function (e) {
+  document.getElementById("loan-amount").addEventListener("input", (e) => {
     const input = e.target;
     const rawValue = removeCommas(input.value);
     if (!isNaN(rawValue) && rawValue !== "") {
@@ -32,7 +27,7 @@ function addCommas(value) {
     }
   });
   
-  document.getElementById("monthly-payment").addEventListener("input", function (e) {
+  document.getElementById("monthly-payment").addEventListener("input", (e) => {
     const input = e.target;
     const rawValue = removeCommas(input.value);
     if (!isNaN(rawValue) && rawValue !== "") {
@@ -41,7 +36,7 @@ function addCommas(value) {
   });
   
   // calculate loan payoff
-  function calculatePayoff() {
+  const calculatePayoff = () => {
     const loanAmount = parseFloat(removeCommas(document.getElementById('loan-amount').value));
     const monthlyPayment = parseFloat(removeCommas(document.getElementById('monthly-payment').value));
     const interestRate = parseFloat(document.getElementById('interest-rate').value) / 100;
@@ -145,8 +140,8 @@ function filterByType(type) {
 
 filterByType("house");
 
-document.getElementById("loan-selection").addEventListener("change", function () {
-  const selectedValue = this.value;
+document.getElementById("loan-selection").addEventListener("change", (e) => {
+  const selectedValue = e.target.value;
   const loanCategory = {
       housing: "house",
       apartment: "apartment",

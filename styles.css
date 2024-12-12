@@ -38,7 +38,7 @@ label, select, input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 120px;
+  padding-top: 60px;
   padding-bottom: 20px;
 }
 
@@ -117,22 +117,6 @@ button:active {
   width: 100%;
   margin-bottom: 20px;
 }
-
-/* .img-container {
-  max-width: 300px;
-  max-height: 200px;
-  display: block;
-  overflow: hidden;
-  padding-top: 25px;
-  margin-right: 10px;
-}
-
-.img-item {
-  max-width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */
-
 
 .img-container {
   max-width: 250px;
